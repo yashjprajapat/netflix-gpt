@@ -1,21 +1,19 @@
-import React, { useRef, useState } from "react";
-import Header from "./Header";
-import { background } from "../utils/image";
-import checkValidData from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
-import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router";
-import { updateProfile } from "firebase/auth";
+import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import { auth } from "../utils/firebase";
+import { background, defaultAvatar } from "../utils/image";
 import { addUser } from "../utils/userSlice";
+import checkValidData from "../utils/validate";
+import Header from "./Header";
 
 const SignInUp = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errMessage, setErrMessage] = useState("");
-  const navigate = useNavigate(); //useNavigate hook from react-router
   const dispatch = useDispatch();
   const name = useRef();
   const email = useRef(null);
@@ -41,15 +39,15 @@ const SignInUp = () => {
       )
         .then((userCredential) => {
           // Signed up
-          const user = userCredential.user;  //get latest user/updated value
+          const user = userCredential.user; //get latest user/updated value
           updateProfile(auth.currentUser, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/122102790?v=4",
+            photoURL: defaultAvatar ,
           })
             .then(() => {
               // Profile updated!
               // ...
-              const {uid, email, displayName, photoURL} = auth.currentUser;
+              const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(
                 addUser({
                   uid: uid,
@@ -58,7 +56,6 @@ const SignInUp = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse"); //navigate to browse page after successful signup
             })
             .catch((error) => {
               // An error occurred
@@ -82,7 +79,6 @@ const SignInUp = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browse"); //navigate to browse page after successful sign in
           // ...
         })
         .catch((error) => {
