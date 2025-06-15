@@ -1,6 +1,5 @@
-import React from "react";
+import { background } from "../utils/constants";
 import Header from "./Header";
-import { background } from "../utils/image";
 
 const Home = () => {
   return (

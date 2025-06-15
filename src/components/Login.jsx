@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import { background } from "../utils/image";
+import { background } from "../utils/constants";
 
 /*Login page with a form with two input fields and Sign In button.
 Header component is used to render the Netflix logo on top*/ 

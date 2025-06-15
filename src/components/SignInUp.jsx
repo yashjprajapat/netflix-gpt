@@ -6,7 +6,7 @@ import {
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { auth } from "../utils/firebase";
-import { background, defaultAvatar } from "../utils/image";
+import { background, defaultAvatar } from "../utils/constants";
 import { addUser } from "../utils/userSlice";
 import checkValidData from "../utils/validate";
 import Header from "./Header";

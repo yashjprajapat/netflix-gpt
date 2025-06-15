@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { auth } from "../utils/firebase";
-import { logo } from "../utils/image";
+import { logo } from "../utils/constants";
 import { addUser, removeUser } from "../utils/userSlice";
 
 const Header = () => {
