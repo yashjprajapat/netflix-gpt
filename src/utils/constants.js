@@ -12,7 +12,7 @@ export const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZWEzYjEyYTlmMzkyNzhjZWUwM2Q2YzMyODRjMjA0MiIsIm5iZiI6MTc0NzY1MzQ4Ny41NTQsInN1YiI6IjY4MmIxMzZmYmU4NDBhZGIyODBiZDc0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EvI0PbyKKm2yulDzErHEbzy0VP9ZtAkZpTL-5hEc008",
+      "Bearer "+ import.meta.env.VITE_TMDB_KEY,
   },
 }; // movie api
 
@@ -28,3 +28,7 @@ export const SUPPORTED_lANGUAGES = [{
   identifier: 'spanish', name: 'Spanish',
 }
 ];
+
+export const OPENAI_KEY = import.meta.env.VITE_OPENAI_KEY;
+
+export const GEMINI_KEY = import.meta.env.VITE_GEMINI_KEY;
