@@ -6,8 +6,8 @@ const GptSearch = () => {
   return (
     <>
     <div>
-        <div className="sm:absolute md:fixed w-full h-full -z-10">
-        <img className='h-screen object-cover' src={background}
+        <div className=" fixed w-full h-full -z-10">
+        <img className='max-xl:h-screen max-xl:object-cover' src={background}
         alt='Background' 
         />
       </div>

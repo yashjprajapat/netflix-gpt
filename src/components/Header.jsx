@@ -59,11 +59,11 @@ const Header = () => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row absolute w-full top-0 z-10 bg-gradient-to-b justify-between   from-black ">
-      <img className="w-[250px] h-[100px] mx-auto md:mx-0 " src={logo} alt="Netflix Logo" />
+    <div className="flex  max-lg:flex-row absolute w-full top-0 z-10 bg-gradient-to-b justify-between   from-black ">
+      <img className="w-[250px] h-[100px] mx-auto md:mx-0 max-md:scale-75" src={logo} alt="Netflix Logo" />
       {user && (
         <div className="items-center flex">
-          {showGptSearch && <select onChange={handleLanguageChange} className="p-2 bg-gray-900 text-white">
+          {showGptSearch && <select onChange={handleLanguageChange} className="p-2 max-md:scale-70 bg-gray-900 text-white">
             {SUPPORTED_lANGUAGES.map((lang) => (
               <option key={lang.identifier} value={lang.identifier}>
                 {lang.name}
@@ -72,17 +72,17 @@ const Header = () => {
           </select>}
           <button
             onClick={handleGptSearchClick}
-            className="mx-2 py-2 px-4 text-white bg-purple-500 rounded-lg"
+            className="max-md:text-center max-md:py-0.5 max-md:scale-70 mx-2 py-2 px-4 text-white bg-purple-500 rounded-lg"
           >
             {showGptSearch ? "Homepage" : "GPT Search"}
           </button>
           <img
-            className="rounded-2xl p-2 m-2 h-[70px]"
+            className="rounded-2xl max-md:scale-70 max-md:my-0.5 p-2 m-2 h-[70px]"
             src={user?.photoURL}
             alt="usericon"
           />
           <button
-            className="p-2 m-2 cursor-pointer text-white font-bold"
+            className="p-2 m-2 cursor-pointer max-md:my-0.5 max-md:scale-70  text-white font-bold"
             onClick={handleSignOut}
           >
             (Sign Out)

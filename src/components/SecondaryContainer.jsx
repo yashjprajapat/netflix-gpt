@@ -6,7 +6,7 @@ const SecondaryContainer = () => {
   return (
     movies && ( //render if movies is present
       <div className="bg-black">
-        <div className="-mt-52 relative z-10">
+        <div className="-mt-52 max-md:mt-0 relative z-10">
           {/*margin negative to overlap,z-index to get it at top*/}
           <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
           <MovieList title={"Popular"} movies={movies.popularMovies} />
